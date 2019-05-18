@@ -9,36 +9,23 @@ import {
   VrButton,
   Environment,
 } from 'react-360';
+import { connect, changeCountry } from './store'
 
-export default class HelloworldVR extends React.Component {
-  
-  state = {
-    name: 'Bill',
-    location: 'North-West Europe',
-    population: '60,000,000',
-    language: 'English',
-    economy: 'Pork Pies, Gin, Beer, Cider',
-    neighbours: ["Alaska", "Russia", "Japan"]
-    //  data.country.name
-  }
 
-  clickHandler(countrylink){
-    this.setState({
-      name: data[`${countrylink}`].name,
-      location: data[`${countrylink}`].location,
-      population: data[`${countrylink}`].population,
-      language: data[`${countrylink}`].language,
-      economy: data[`${countrylink}`].economy,
-      neighbours: ["Alaska", "Russia", "Japan"]
-    })
 
+export class Buttons extends React.Component {
     
-
+  clickHandler(countrylink){
+    console.log(countrylink)
+    console.log(changeCountry)
+    changeCountry(countrylink)
   }
 
   createNeghbourBtn(array){
     buttons = []
+    console.log(array)
     array.map(neighbour => {
+      console.log(neighbour)
       buttons.push(
       <VrButton key={`${neighbour} - button`} onClick={() => this.clickHandler(neighbour)}>
         <Text style={{backgroundColor: 'green'}}> { neighbour }</Text>
@@ -49,6 +36,7 @@ export default class HelloworldVR extends React.Component {
   }
 
   render() {
+    // console.log(this.props.neighbours)
     return (
       <View style={styles.panel}>
 
@@ -56,38 +44,49 @@ export default class HelloworldVR extends React.Component {
           <Text style={styles.greeting}>
             Pick a destination!
           </Text>
-          {this.createNeghbourBtn(this.state.neighbours)}
+          {this.createNeghbourBtn(this.props.neighbours)}
         </View>
-
-        <View style={styles.greetingBox}>
-          <Text style={styles.greeting}>
-            Destination info!
-          </Text>
-          <Text>
-            {this.state.name}
-          </Text>
-          <Text>
-            {this.state.location}
-          </Text>
-          <Text>
-            {this.state.population}
-          </Text>
-          <Text>
-            {this.state.language}
-          </Text>
-          
-        </View>
-
       </View>
     );
   }
 };
 
+
+
+export class Info extends React.Component {
+  render() {
+    return (
+      <View style={styles.panel}>
+        <View style={styles.greetingBox}>
+          <Text style={styles.greeting}>
+            Destination info!
+          </Text>
+          <Text>
+            {this.props.name}
+          </Text>
+          <Text>
+            {this.props.location}
+          </Text>
+          <Text>
+            {this.props.population}
+          </Text>
+          <Text>
+            {this.props.language}
+          </Text>        
+        </View>
+      </View>
+    );
+  }
+};
+
+const ConnectedButtons = connect(Buttons)
+const ConnectedInfo = connect(Info)
+
 const styles = StyleSheet.create({
   panel: {
     // Fill the entire surface
-    width: 1000,
-    height: 600,
+    // width: 1000,
+    // height: 600,
     backgroundColor: 'rgba(255, 255, 255, 0.4)',
     justifyContent: 'center',
     alignItems: 'center',
@@ -103,4 +102,5 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('HelloworldVR', () => HelloworldVR);
+AppRegistry.registerComponent('ConnectedButtons', () => ConnectedButtons);
+AppRegistry.registerComponent('ConnectedInfo', () => ConnectedInfo);
