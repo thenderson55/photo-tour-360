@@ -4,11 +4,9 @@ import { asset, Environment } from 'react-360'
 // import { listeners } from 'cluster';
 
 const countries = []
-console.log(data)
 for(let country in data){
   countries.push(country)
 }
-console.log(countries)
 
 const State = {
   name: 'Bill',
