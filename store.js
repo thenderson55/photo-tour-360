@@ -3,13 +3,20 @@ import data from './data/pototour'
 import { asset, Environment } from 'react-360'
 // import { listeners } from 'cluster';
 
+const countries = []
+console.log(data)
+for(let country in data){
+  countries.push(country)
+}
+console.log(countries)
+
 const State = {
   name: 'Bill',
   location: 'North-West Europe',
   population: '60,000,000',
   language: 'English',
   economy: 'Pork Pies, Gin, Beer, Cider',
-  neighbours: ["Alaska", "Russia", "Hawaii"]
+  neighbours: countries
 }
 
 const listeners = new Set()
@@ -27,7 +34,7 @@ export function changeCountry(countrySelection){
   State.population = data[`${countrySelection}`].population,
   State.language = data[`${countrySelection}`].language,
   State.economy = data[`${countrySelection}`].economy,
-  State.neighbours = ["Alaska", "Russia", "Hawaii"]
+  State.neighbours = countries
 
   Environment.setBackgroundImage(asset(`${countrySelection}.jpg`))
 
