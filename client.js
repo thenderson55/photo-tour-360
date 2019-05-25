@@ -35,8 +35,8 @@ function init(bundle, parent, options = {}) {
 
   // Load the initial environment
   r360.compositor.setBackground(r360.getAssetURL("Hawaii.jpg"));
-  // r360.controls.clearRaycasters()
-  // r360.controls.addRaycaster(SimpleRayCaster)
+  r360.controls.clearRaycasters()
+  r360.controls.addRaycaster(SimpleRayCaster)
 }
 
 window.React360 = { init };

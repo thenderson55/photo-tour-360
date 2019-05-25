@@ -1,51 +1,16 @@
 import React from "react";
 import { AppRegistry, StyleSheet, Text, View, VrButton } from "react-360";
 import { connect, changeCountry } from "./store";
-// import GazeButton from "react-360-gaze-button";
+import GazeButton from "react-360-gaze-button";
 
-// export class MobileButton extends React.Component {
-//   state = {
-//     gazed: false,
-//     hover: false
-//   };
-
-//   setGazed = () => {
-//     this.setState({ gazed: true });
-//   };
-
-//   clickHandler(countrylink) {
-//     changeCountry(countrylink);
-//   }
-
-//   render() {
-//     const { gazed } = this.state;
-//     return (
-//       <GazeButton
-//         duration={2000}
-//         // onClick={this.setGazed}
-//         style={this.state.hover ? styles.hover : styles.button}
-//         onEnter={() => this.setState({ hover: true })}
-//         onExit={() => this.setState({ hover: false })}
-//         onClick={() => {
-//           this.setGazed;
-//           this.clickHandler(this.props.country);
-//         }}
-//         render={(remainingTime, isGazed) => (
-//           <View>
-//             <Text style={{ textAlign: "center", fontSize: 30 }}>
-//               {this.props.country}
-//             </Text>
-//             <Text style={{ color: 'black', fontWeight: "500" }}>{isGazed ? remainingTime : ""}</Text>
-//           </View>
-//         )}
-//       />
-//     );
-//   }
-// }
-
-class Button extends React.Component {
+export class MobileButton extends React.Component {
   state = {
+    gazed: false,
     hover: false
+  };
+
+  setGazed = () => {
+    this.setState({ gazed: true });
   };
 
   clickHandler(countrylink) {
@@ -53,27 +18,64 @@ class Button extends React.Component {
   }
 
   render() {
+    const { gazed } = this.state;
     return (
-      <VrButton
+      <GazeButton
+        duration={2000}
+        // onClick={this.setGazed}
         style={this.state.hover ? styles.hover : styles.button}
         onEnter={() => this.setState({ hover: true })}
         onExit={() => this.setState({ hover: false })}
-        onClick={() => this.clickHandler(this.props.country)}
-      >
-        <Text style={styles.text}>
-          {this.props.country}
-        </Text>
-      </VrButton>
+        onClick={() => {
+          this.setGazed;
+          this.clickHandler(this.props.country);
+        }}
+        render={(remainingTime, isGazed) => (
+          <View>
+            <Text style={styles.text}>
+              <Text>  </Text>
+              {this.props.country}
+              <Text> </Text>
+            <Text style={styles.countText}>{isGazed ? remainingTime : ""}</Text>
+            </Text>
+          </View>
+        )}
+      />
     );
   }
 }
+
+// class Button extends React.Component {
+//   state = {
+//     hover: false
+//   };
+
+//   clickHandler(countrylink) {
+//     changeCountry(countrylink);
+//   }
+
+//   render() {
+//     return (
+//       <VrButton
+//         style={this.state.hover ? styles.hover : styles.button}
+//         onEnter={() => this.setState({ hover: true })}
+//         onExit={() => this.setState({ hover: false })}
+//         onClick={() => this.clickHandler(this.props.country)}
+//       >
+//         <Text style={styles.text}>
+//           {this.props.country}
+//         </Text>
+//       </VrButton>
+//     );
+//   }
+// }
 
 export class Buttons extends React.Component {
   createNeghbourBtn(array) {
     buttons = [];
     array.map(country => {
       buttons.push(
-        <Button key={`${country} - button`} country={country} />
+        <MobileButton key={`${country} - button`} country={country} />
       );
     });
     return buttons;
@@ -121,7 +123,7 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   buttonPanel: {
-    width: 370,
+    width: 450,
     height: 1000,
     // opacity: 0.5,
     backgroundColor: "rgba(255, 200, 50, 0.6)",
@@ -133,27 +135,27 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   button: {
-    width: 250,
+    width: 350,
     height: 70,
     backgroundColor: "rgba(0,0,0, 0.7)",
     borderColor: "rgb(255,255,255)",
     borderWidth: 5
   },
   hover: {
-    width: 250,
+    width: 350,
     height: 70,
     backgroundColor: "#0073B7",
     borderColor: "rgb(255,255,255)",
     borderWidth: 5
   },
   header: {
-    fontSize: 60,
+    fontSize: 45,
     color: "rgb(0 ,0 ,0)",
     fontWeight: "400",
     textAlign: "center"
   },
   infoHeader: {
-    fontSize: 60,
+    fontSize: 45,
     fontStyle: "italic",
     textDecorationLine: "underline",
     color: "rgb(255 ,255 ,255)",
@@ -162,8 +164,15 @@ const styles = StyleSheet.create({
     margin: 20
   },
   text: {
+    // textAlign: "center",
     color: "rgb(255 ,255 ,255)",
-    fontSize: 50,
+    fontSize: 45,
+    fontWeight: "400"
+  },
+  countText: {
+    // textAlign: "center",
+    color: "rgb(255 ,255 ,255)",
+    fontSize: 20,
     fontWeight: "400"
   }
 });
