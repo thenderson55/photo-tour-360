@@ -1,100 +1,82 @@
 export default data = { 
-  // Hawaii: {
-  //   name: 'Hawaii',
-  //   location: 'Mid-Pacific',
-  //   population: '5,000,000',
-  //   language: 'English',
-  //   economy: ['coconuts', 'tourism', 'spam']
-  // },
-  Alaska: {
-    name: 'Alaska',
-    location: 'North America',
-    population: '3,000,000',
+  Hawaii: {
+    name: 'Hawaii',
+    location: 'Pacific',
+    population: '1,420,000',
+    capital: 'Honolulu',
     language: 'English',
-    economy: ['gold', 'timber', 'moose meat']
+    economy: ['coconuts', 'tourism', 'spam']
   },
-  // Russia: {
-  //   name: 'Russia',
-  //   location: 'East Europe and North Asia',
-  //   population: '165,000,000',
-  //   language: 'Russian',
-  //   economy: ['AK-47s', 'Putin', 'Vodka']
-  // },
-  // Japan: {
-  //   name: 'Japan',
-  //   location: 'East-Asia',
-  //   population: '125,000,000',
-  //   language: 'Japanaese',
-  //   economy: ['automobiles', 'electronics', 'ninja']
-  // },
   Cambodia: {
-    name: 'Japan',
-    location: 'East-Asia',
-    population: '125,000,000',
-    language: 'Japanaese',
+    name: 'Cambodia',
+    location: 'South-East Asia',
+    population: '16,245,000',
+    capital: 'Phnom Penh',
+    language: 'Khmer',
     economy: ['automobiles', 'electronics', 'ninja']
   },
   Australia: {
-    name: 'Japan',
-    location: 'East-Asia',
-    population: '125,000,000',
-    language: 'Japanaese',
+    name: 'Australia',
+    location: 'South Pacific',
+    population: '24,600,000',
+    capital: 'Canberra',
+    language: 'English',
     economy: ['automobiles', 'electronics', 'ninja']
   },
-  // England: {
-  //   name: 'Japan',
-  //   location: 'East-Asia',
-  //   population: '125,000,000',
-  //   language: 'Japanaese',
-  //   economy: ['automobiles', 'electronics', 'ninja']
-  // },
   Argentina: {
-    name: 'Japan',
-    location: 'East-Asia',
-    population: '125,000,000',
-    language: 'Japanaese',
+    name: 'Argentina',
+    location: 'South America',
+    population: '43,847,000',
+    capital: 'Buenos Aires',
+    language: 'Spanish',
     economy: ['automobiles', 'electronics', 'ninja']
   },
-  // Croatia: {
-  //   name: 'Japan',
-  //   location: 'East-Asia',
-  //   population: '125,000,000',
-  //   language: 'Japanaese',
-  //   economy: ['automobiles', 'electronics', 'ninja']
-  // },
-  Dubai: {
-    name: 'Japan',
-    location: 'East-Asia',
-    population: '125,000,000',
-    language: 'Japanaese',
+  Croatia: {
+    name: 'Croatia',
+    location: 'Central Europe',
+    population: '4,150,000',
+    capital: 'Zagreb',
+    language: 'Croatian',
+    economy: ['automobiles', 'electronics', 'ninja']
+  },
+  UAE: {
+    name: 'U.A.E',
+    location: 'Middle-East',
+    population: '3,170,000',
+    capital: 'Dubai',
+    language: 'Arabic',
     economy: ['automobiles', 'electronics', 'ninja']
   },
   Faroe: {
-    name: 'Japan',
-    location: 'East-Asia',
-    population: '125,000,000',
-    language: 'Japanaese',
+    name: 'Faroe Islands',
+    location: 'North Europe',
+    population: '51,540',
+    capital: 'Tórshavn',
+    language: 'Faroese',
     economy: ['automobiles', 'electronics', 'ninja']
   },
   Greece: {
-    name: 'Japan',
-    location: 'East-Asia',
-    population: '125,000,000',
-    language: 'Japanaese',
+    name: 'Greece',
+    location: 'South Europe',
+    population: '10,770,000',
+    capital: 'Athens',
+    language: 'Greek',
     economy: ['automobiles', 'electronics', 'ninja']
   },
   Haiti: {
-    name: 'Japan',
-    location: 'East-Asia',
-    population: '125,000,000',
-    language: 'Japanaese',
+    name: 'Haiti',
+    location: 'Caribbean',
+    population: '10,847,000',
+    capital: 'Port-au-Prince',
+    language: 'Creole',
     economy: ['automobiles', 'electronics', 'ninja']
   },
   Italy: {
-    name: 'Japan',
-    location: 'East-Asia',
-    population: '125,000,000',
-    language: 'Japanaese',
+    name: 'Italy',
+    location: 'South Europe',
+    population: '60,590,000',
+    capital: 'Rome',
+    language: 'Italian',
     economy: ['automobiles', 'electronics', 'ninja']
   },
 }

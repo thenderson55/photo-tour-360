@@ -12,8 +12,8 @@ function init(bundle, parent, options = {}) {
     ...options
   });
 
-  const buttonsPanel = new Surface(800, 550, Surface.SurfaceShape.Flat);
-  const infoPanel = new Surface(400, 550, Surface.SurfaceShape.Flat);
+  const buttonsPanel = new Surface(800, 1050, Surface.SurfaceShape.Flat);
+  const infoPanel = new Surface(600, 600, Surface.SurfaceShape.Flat);
 
   buttonsPanel.setAngle( -0.6 , 0)
   infoPanel.setAngle( 0.6 , 0)
@@ -29,16 +29,14 @@ function init(bundle, parent, options = {}) {
 
   r360.renderToSurface(
     r360.createRoot("ConnectedInfo", {
-      /* initial props */
     }),
-    // r360.getDefaultSurface()
     infoPanel
   );
 
   // Load the initial environment
-  r360.compositor.setBackground(r360.getAssetURL("Alaska.jpg"));
-  r360.controls.clearRaycasters()
-  r360.controls.addRaycaster(SimpleRayCaster)
+  r360.compositor.setBackground(r360.getAssetURL("Hawaii.jpg"));
+  // r360.controls.clearRaycasters()
+  // r360.controls.addRaycaster(SimpleRayCaster)
 }
 
 window.React360 = { init };

@@ -9,10 +9,11 @@ for(let country in data){
 }
 
 const State = {
-  name: 'Bill',
-  location: 'North-West Europe',
-  population: '60,000,000',
-  language: 'English',
+  name: 'Hawaii',
+  location: 'Pacific',
+  population: '1,420,000',
+  capital: 'Honolulu',
+  language: 'Hawaiian',
   economy: 'Pork Pies, Gin, Beer, Cider',
   neighbours: countries
 }
@@ -30,6 +31,7 @@ export function changeCountry(countrySelection){
   State.name = countrySelection
   State.location = data[`${countrySelection}`].location,
   State.population = data[`${countrySelection}`].population,
+  State.capital = data[`${countrySelection}`].capital,
   State.language = data[`${countrySelection}`].language,
   State.economy = data[`${countrySelection}`].economy,
   State.neighbours = countries
@@ -46,6 +48,7 @@ export function connect(Component) {
       name: State.name,
       location: State.location,
       population: State.population,
+      capital: State.capital,
       language: State.language,
       economy: State.economy,
       neighbours: State.neighbours
@@ -56,6 +59,7 @@ export function connect(Component) {
         name: State.name,
         location: State.location,
         population: State.population,
+        capital: State.capital,
         language: State.language,
         economy: State.economy,
         neighbours: State.neighbours
@@ -73,6 +77,7 @@ export function connect(Component) {
           name={this.state.name}
           location={this.state.location}
           population={this.state.population}
+          capital={this.state.capital}
           language={this.state.language}
           economy={this.state.economy}
           neighbours={this.state.neighbours}
